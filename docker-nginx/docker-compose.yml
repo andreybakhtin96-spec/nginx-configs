@@ -1,0 +1,14 @@
+services:
+  nginx:
+    build: .
+    ports:
+      - "8081:80"
+    container_name: my-nginx
+
+  apache:
+    image: httpd:alpine
+    ports:
+      - "8082:80"
+    container_name: my-apache
+    volumes:
+      - ./apache-html:/usr/local/apache2/htdocs/
